@@ -1,0 +1,24 @@
+{
+  "name": "xyz.candycoded.env",
+  "displayName": "env",
+  "version": "1.0.0",
+  "unity": "2019.1",
+  "unityRelease": "0f1",
+  "description": "Use .env files in your Unity projects.",
+  "license": "MIT",
+  "dependencies": {
+  },
+  "keywords": [
+    "env"
+  ],
+  "author": {
+    "name": "Scott Doxey",
+    "email": "hello@scottdoxey.com",
+    "homepage": "http://scottdoxey.com/"
+  },
+  "homepage": "https://github.com/CandyCoded/env",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:CandyCoded/env.git"
+  }
+}
