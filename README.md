@@ -2,6 +2,8 @@
 
 > Use `.env` files in your Unity projects.
 
+[![npm](https://img.shields.io/npm/v/xyz.candycoded.env)](https://www.npmjs.com/package/xyz.candycoded.env)
+
 ### Unity Package Manager
 
 <https://docs.unity3d.com/Packages/com.unity.package-manager-ui@2.0/manual/index.html>
@@ -14,6 +16,24 @@
     "xyz.candycoded.env": "https://github.com/CandyCoded/env.git#v1.0.0",
     ...
   }
+}
+```
+
+#### Scoped UPM Registry
+
+```json
+{
+  "dependencies": {
+    "xyz.candycoded.env": "1.0.0",
+    ...
+  },
+  "scopedRegistries": [
+    {
+      "name": "candycoded",
+      "url": "https://registry.npmjs.com",
+      "scopes": ["xyz.candycoded"]
+    }
+  ]
 }
 ```
 
