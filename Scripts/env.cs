@@ -32,7 +32,7 @@ namespace CandyCoded.env
             return contents.Trim().Split(Convert.ToChar(Environment.NewLine)).Where(l =>
                     !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#") && l.IndexOf("=", StringComparison.Ordinal) != -1)
                 .ToDictionary(l => l.Substring(0, l.IndexOf("=", StringComparison.Ordinal)).Trim(),
-                    l => l.Substring(l.IndexOf("=", StringComparison.Ordinal) + 1).Trim());
+                    l => l.Substring(l.IndexOf("=", StringComparison.Ordinal) + 1).Trim().Trim('"', '\''));
 
         }
 
