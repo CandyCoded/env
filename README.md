@@ -45,6 +45,11 @@ Create a `.env` file at the root of your project, outside of the `Assets/` folde
 DEBUG=true
 ```
 
+Or use the Editor planel found by navigating to **Window** > **CandyCoded** > **Environment File Editor**.
+
+<img src="https://i.imgur.com/qtBzAh3.png" width="400">
+<img src="https://i.imgur.com/QxT0bP1.png" width="400">
+
 > Note: Don't forget to add `.env` to your `.gitignore` file before committing any changes!
 
 Now you can reference the variables and their values with the key specified in the `.env` file. Supported value types
