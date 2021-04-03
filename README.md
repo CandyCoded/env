@@ -13,7 +13,7 @@
 ```json
 {
   "dependencies": {
-    "xyz.candycoded.env": "https://github.com/CandyCoded/env.git#v1.0.0",
+    "xyz.candycoded.env": "https://github.com/CandyCoded/env.git#v1.1.0",
     ...
   }
 }
@@ -24,7 +24,7 @@
 ```json
 {
   "dependencies": {
-    "xyz.candycoded.env": "1.0.0",
+    "xyz.candycoded.env": "1.1.0",
     ...
   },
   "scopedRegistries": [
