@@ -36,6 +36,21 @@ namespace CandyCoded.env
 
         }
 
+        public static string SerializeEnvironmentDictionary(Dictionary<string, string> dictionary)
+        {
+
+            if (dictionary.Any(item => string.IsNullOrEmpty(item.Key)))
+            {
+
+                throw new Exception("One or more keys are missing! Please fix and try again.");
+
+            }
+
+            return string.Join(Environment.NewLine,
+                dictionary.Select(item => $"{item.Key}={item.Value}"));
+
+        }
+
         public static Dictionary<string, string> ParseEnvironmentFile()
         {
 
