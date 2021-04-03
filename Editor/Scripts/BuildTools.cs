@@ -12,9 +12,18 @@ namespace CandyCoded.env.Editor
     public class BuildTools : IPreprocessBuildWithReport, IPostprocessBuildWithReport
     {
 
-        public int callbackOrder { get; }
-
         private bool _resourcesDirCreated;
+
+        public void OnPostprocessBuild(BuildReport report)
+        {
+
+            FileUtil.DeleteFileOrDirectory(_resourcesDirCreated ? env.resourcesDirPath : env.runtimeFilePath);
+
+            _resourcesDirCreated = false;
+
+        }
+
+        public int callbackOrder { get; }
 
         public void OnPreprocessBuild(BuildReport report)
         {
@@ -36,15 +45,6 @@ namespace CandyCoded.env.Editor
             }
 
             FileUtil.CopyFileOrDirectory(env.editorFilePath, env.runtimeFilePath);
-
-        }
-
-        public void OnPostprocessBuild(BuildReport report)
-        {
-
-            FileUtil.DeleteFileOrDirectory(_resourcesDirCreated ? env.resourcesDirPath : env.runtimeFilePath);
-
-            _resourcesDirCreated = false;
 
         }
 
