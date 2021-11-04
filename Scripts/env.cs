@@ -28,7 +28,7 @@ namespace CandyCoded.env
         public static Dictionary<string, string> ParseEnvironmentFile(string contents)
         {
 
-            return contents.Trim().Split(Convert.ToChar(Environment.NewLine)).Where(l =>
+            return contents.Trim().Split(new string[] { Environment.NewLine }, StringSplitOptions.None).Where(l =>
                     !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#") &&
                     l.IndexOf("=", StringComparison.Ordinal) != -1)
                 .ToDictionary(l => l.Substring(0, l.IndexOf("=", StringComparison.Ordinal)).Trim(),
