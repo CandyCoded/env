@@ -97,6 +97,16 @@ namespace CandyCoded.env
 
         }
 
+#if UNITY_EDITOR
+#pragma warning disable IDE0051 // Remove unused private members
+        [UnityEditor.InitializeOnEnterPlayMode]
+        private static void InitializeOnEnterPlayMode()
+        {
+            _variables = null;
+        }
+#pragma warning restore IDE0051 // Remove unused private members  
+#endif
+
     }
 
 }
