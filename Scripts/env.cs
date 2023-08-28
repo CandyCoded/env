@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace CandyCoded.env
@@ -12,7 +13,6 @@ namespace CandyCoded.env
 
     public static class env
     {
-
         public const string filename = "env";
 
         public static readonly string editorFilePath = Path.Combine(Application.dataPath, "../", $".{filename}");
@@ -27,10 +27,8 @@ namespace CandyCoded.env
 
         public static Dictionary<string, string> ParseEnvironmentFile(string contents)
         {
-
-            return contents.Trim().Split(new string[] { Environment.NewLine }, StringSplitOptions.None).Where(l =>
-                    !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#") &&
-                    l.IndexOf("=", StringComparison.Ordinal) != -1)
+            return Regex.Split(contents.Trim(), "\r\n|\r|\n").Where(l =>
+                    !string.IsNullOrWhiteSpace(l) && !l.StartsWith("#") && l.IndexOf("=", StringComparison.Ordinal) != -1)
                 .ToDictionary(l => l.Substring(0, l.IndexOf("=", StringComparison.Ordinal)).Trim(),
                     l => l.Substring(l.IndexOf("=", StringComparison.Ordinal) + 1).Trim().Trim('"', '\''));
 
