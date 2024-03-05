@@ -5,6 +5,7 @@ using System.IO;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 namespace CandyCoded.env.Editor
 {
@@ -28,13 +29,6 @@ namespace CandyCoded.env.Editor
         public void OnPreprocessBuild(BuildReport report)
         {
 
-            if (File.Exists(env.runtimeFilePath))
-            {
-
-                throw new Exception($"{env.runtimeFilePath} already exists. Remove this file before continuing.");
-
-            }
-
             if (!Directory.Exists(env.resourcesDirPath))
             {
 
@@ -43,8 +37,14 @@ namespace CandyCoded.env.Editor
                 _resourcesDirCreated = true;
 
             }
-
-            if (File.Exists(env.editorFilePath))
+            
+            if (File.Exists(env.runtimeFilePath))
+            {   
+                
+                Debug.LogWarning($"{env.runtimeFilePath} already exists, using the existing file rather than copying current env.");
+                
+            }
+            else if (File.Exists(env.editorFilePath))
             {
 
                 FileUtil.CopyFileOrDirectory(env.editorFilePath, env.runtimeFilePath);
