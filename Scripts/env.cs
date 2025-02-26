@@ -21,7 +21,7 @@ namespace CandyCoded.env
 
         public static readonly string runtimeFilePath = Path.Combine(resourcesDirPath, $"{filename}.txt");
 
-        private static Dictionary<string, string> _variables;
+        private static Dictionary<string, string> _variables = new();
 
         public static Dictionary<string, string> variables => _variables ??= ParseEnvironmentFile();
 
@@ -65,9 +65,7 @@ namespace CandyCoded.env
         public static bool TryParseEnvironmentVariable(string key, out string value)
         {
 
-            value = variables[key];
-
-            return variables.ContainsKey(key);
+            return variables.TryGetValue(key, out value);
 
         }
 
