@@ -66,10 +66,19 @@ namespace CandyCoded.env
         {
 
 #if UNITY_EDITOR
-            return ParseEnvironmentFile(File.ReadAllText(editorFilePath, Encoding.UTF8));
+            if (File.Exists(editorFilePath))
+            {
+                return ParseEnvironmentFile(File.ReadAllText(editorFilePath, Encoding.UTF8));
+            }
 #else
-            return ParseEnvironmentFile(((TextAsset)Resources.Load(filename)).text);
+            var contents = Resources.Load<TextAsset>(filename);
+
+            if (contents)
+            {
+                return ParseEnvironmentFile(contents.text);
+            }
 #endif
+            return new Dictionary<string, string>();
 
         }
 
