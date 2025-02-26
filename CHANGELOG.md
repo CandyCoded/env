@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.1.4](https://github.com/CandyCoded/env/tree/v1.1.4) - (2025-02-26)
+
+[Full Changelog](https://github.com/CandyCoded/env/compare/v1.1.3...v1.1.4)
+
+- [hotfix] Added missing meta files. [#15](https://github.com/CandyCoded/env/pull/15)
+
 ## [v1.1.3](https://github.com/CandyCoded/env/tree/v1.1.3) - (2025-02-26)
 
 [Full Changelog](https://github.com/CandyCoded/env/compare/v1.1.2...v1.1.3)
