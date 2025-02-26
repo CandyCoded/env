@@ -23,7 +23,18 @@ namespace CandyCoded.env
 
         private static Dictionary<string, string> _variables = new();
 
-        public static Dictionary<string, string> variables => _variables ??= ParseEnvironmentFile();
+        public static Dictionary<string, string> variables
+        {
+            get
+            {
+                if (_variables.Count == 0)
+                {
+                    _variables = ParseEnvironmentFile();
+                }
+
+                return _variables;
+            }
+        }
 
         public static Dictionary<string, string> ParseEnvironmentFile(string contents)
         {
