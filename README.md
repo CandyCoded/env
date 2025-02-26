@@ -13,7 +13,7 @@
 ```json
 {
   "dependencies": {
-    "xyz.candycoded.env": "https://github.com/CandyCoded/env.git#v1.1.0",
+    "xyz.candycoded.env": "https://github.com/CandyCoded/env.git#v1.1.3",
     ...
   }
 }
@@ -24,7 +24,7 @@
 ```json
 {
   "dependencies": {
-    "xyz.candycoded.env": "1.1.0",
+    "xyz.candycoded.env": "1.1.3",
     ...
   },
   "scopedRegistries": [
@@ -45,7 +45,7 @@ Create a `.env` file at the root of your project, outside of the `Assets/` folde
 DEBUG=true
 ```
 
-Or use the Editor planel found by navigating to **Window** > **CandyCoded** > **Environment File Editor**.
+Or use the Editor panel found by navigating to **Window** > **CandyCoded** > **Environment File Editor**.
 
 <img src="https://i.imgur.com/qtBzAh3.png" width="400">
 <img src="https://i.imgur.com/QxT0bP1.png" width="400">
