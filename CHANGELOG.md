@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.1.5](https://github.com/CandyCoded/env/tree/v1.1.5) - (2025-02-26)
+
+[Full Changelog](https://github.com/CandyCoded/env/compare/v1.1.4...v1.1.5)
+
+- [hotfix] Only created resources dir if env file exists. [#16](https://github.com/CandyCoded/env/pull/16)
+
 ## [v1.1.4](https://github.com/CandyCoded/env/tree/v1.1.4) - (2025-02-26)
 
 [Full Changelog](https://github.com/CandyCoded/env/compare/v1.1.3...v1.1.4)
