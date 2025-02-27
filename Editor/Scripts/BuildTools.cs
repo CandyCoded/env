@@ -35,17 +35,17 @@ namespace CandyCoded.env.Editor
 
             }
 
-            if (!Directory.Exists(env.resourcesDirPath))
-            {
-
-                Directory.CreateDirectory(env.resourcesDirPath);
-
-                _resourcesDirCreated = true;
-
-            }
-
             if (File.Exists(env.editorFilePath))
             {
+
+                if (!Directory.Exists(env.resourcesDirPath))
+                {
+
+                    Directory.CreateDirectory(env.resourcesDirPath);
+
+                    _resourcesDirCreated = true;
+
+                }
 
                 FileUtil.CopyFileOrDirectory(env.editorFilePath, env.runtimeFilePath);
 
